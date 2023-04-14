@@ -1,0 +1,25 @@
+{
+  "name": "notes",
+  "version": "1.0.0",
+  "description": "A note taker",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "typescript-compile": "tsc",
+    "typescript-compile-watch": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jett59/notes.git"
+  },
+  "author": "Jett Thompson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jett59/notes/issues"
+  },
+  "homepage": "https://github.com/Jett59/notes#readme",
+  "devDependencies": {
+    "electron": "^24.1.1",
+    "typescript": "^5.0.4"
+  }
+}
