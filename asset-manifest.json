@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/static/js/main.64acb4ae.js",
-    "index.html": "/index.html",
-    "main.64acb4ae.js.map": "/static/js/main.64acb4ae.js.map"
+    "main.js": "https://jett59.github.io/notes/static/js/main.64acb4ae.js",
+    "index.html": "https://jett59.github.io/notes/index.html",
+    "main.64acb4ae.js.map": "https://jett59.github.io/notes/static/js/main.64acb4ae.js.map"
   },
   "entrypoints": [
     "static/js/main.64acb4ae.js"
