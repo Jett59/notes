@@ -1,14 +1,26 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "module": "CommonJS",
-    "sourceMap": true,
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
+    "allowSyntheticDefaultImports": true,
     "strict": true,
-    "strictNullChecks": true,
-    "noImplicitReturns": true,
+    "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
-  }
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "src"
+  ]
 }

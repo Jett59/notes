@@ -1,25 +1,42 @@
 {
   "name": "notes",
-  "version": "1.0.0",
-  "description": "A note taker",
-  "main": "main.js",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.23",
+    "@types/react": "^18.0.35",
+    "@types/react-dom": "^18.0.11",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.5"
+  },
   "scripts": {
-    "start": "electron .",
-    "typescript-compile": "tsc",
-    "typescript-compile-watch": "tsc --watch"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Jett59/notes.git"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "author": "Jett Thompson",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Jett59/notes/issues"
-  },
-  "homepage": "https://github.com/Jett59/notes#readme",
-  "devDependencies": {
-    "electron": "^24.1.1",
-    "typescript": "^5.0.4"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
