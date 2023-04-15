@@ -25,6 +25,6 @@ jobs:
 
       - name: deploy to github pages
         run: |
-          git config --global user.name "Github Actions [bot]"
+          git config --global user.name "GithubActions[bot]"
           git config --global user.email "jett59@users.noreply.github.com"
           npm run deploy
