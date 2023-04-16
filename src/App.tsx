@@ -40,6 +40,15 @@ export default function App() {
     }
   }, [notes, readNotes]);
 
+  const [shouldPutFocusOnNote, setShouldPutFocusOnNote] = useState(true);
+
+  // Make sure shouldPutFocusOnNote is only true for a single frame.
+  useEffect(() => {
+    if (shouldPutFocusOnNote) {
+      setShouldPutFocusOnNote(false);
+    }
+  }, [shouldPutFocusOnNote]);
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -49,6 +58,7 @@ export default function App() {
             notes={notes}
             openNote={(index) => {
               setOpenNoteIndex(index);
+              setShouldPutFocusOnNote(true);
             }}
             deleteNote={(index) => {
               // If it is the current note, go to the new note (index 0).
@@ -80,6 +90,7 @@ export default function App() {
                 }
                 setNotes(newNotes);
               }}
+              shouldRequestFocus={shouldPutFocusOnNote}
             />
           }
         </Grid>
