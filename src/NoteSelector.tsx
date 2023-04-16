@@ -1,35 +1,38 @@
 import * as React from 'react';
 import { Note } from './note';
-import { Button, Stack } from '@mui/material';
-import { Add } from '@mui/icons-material';
+import { Button, IconButton, Stack, Tooltip } from '@mui/material';
+import { Delete } from '@mui/icons-material';
 
-export default function NoteSelector({ notes, newNote: addNote, openNote }: { notes: Note[], newNote: () => void, openNote: (index: number) => void }) {
+export default function NoteSelector({ notes, openNote, deleteNote }: { notes: Note[], openNote: (index: number) => void, deleteNote: (index: number) => void }) {
     return (
         <Stack
             direction="column"
             spacing={2}
             padding={2}
         >
-            <Button
-                endIcon={<Add />}
-                variant="outlined"
-                onClick={() => addNote()}
-                accessKey='n'
-            >
-                Add Note
-            </Button>
             {notes.map((note, index) => (
-                <Button
+                <Stack
                     key={index}
-                    fullWidth
-                    variant="outlined"
-                    onClick={() => openNote(index)}
+                    direction="row"
+                    spacing={1}
+                    padding={1}
                 >
-                    {note.name === 'New note' && note.content !== ''
-                        ? note.content.split('\n')[0]
-                        : note.name
+                    <Button
+                        fullWidth
+                        variant="outlined"
+                        onClick={() => openNote(index)}
+                    >
+                        {note.content !== ''
+                            ? note.content.split('\n')[0]
+                            : 'New note'
+                        }
+                    </Button>
+                    {index !== 0 &&
+                        <Tooltip title="Delete">
+                            <IconButton onClick={() => deleteNote(index)}><Delete /></IconButton>
+                        </Tooltip>
                     }
-                </Button>
+                </Stack>
             ))}
         </Stack>
     );

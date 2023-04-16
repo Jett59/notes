@@ -7,8 +7,7 @@ export default function NoteViewer({ noteContent, setNoteContent }: { noteConten
         multiline
         value={noteContent}
         onChange={(event) => {
-            setNoteContent(event.target.value)
-            console.log(event.target.value);
+            setNoteContent(event.target.value);
         }}
     />
 }

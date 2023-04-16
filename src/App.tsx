@@ -35,7 +35,6 @@ export default function App() {
   useEffect(() => {
     if (readNotes && notes.length === 0) {
       setNotes([{
-        name: 'New note',
         content: ''
       }]);
     }
@@ -48,15 +47,21 @@ export default function App() {
         <Grid item md={4}>
           <NoteSelector
             notes={notes}
-            newNote={() => {
-              setNotes([{
-                name: 'New note',
-                content: ''
-              }, ...notes]);
-              setOpenNoteIndex(0);
-            }}
             openNote={(index) => {
               setOpenNoteIndex(index);
+            }}
+            deleteNote={(index) => {
+              // If it is the current note, go to the new note (index 0).
+              // If it is after the current note, do nothing.
+              // Otherwise decrement the open index.
+              if (index === openNoteIndex) {
+                setOpenNoteIndex(0);
+              } else if (index < openNoteIndex) {
+                setOpenNoteIndex(openNoteIndex - 1);
+              }
+              let newNotes = [...notes];
+              newNotes.splice(index, 1);
+              setNotes(newNotes);
             }}
           />
         </Grid>
@@ -65,9 +70,14 @@ export default function App() {
             <NoteViewer
               noteContent={notes[openNoteIndex].content}
               setNoteContent={(noteContent) => {
-                console.log(noteContent);
                 let newNotes = [...notes];
                 newNotes[openNoteIndex].content = noteContent;
+                if (openNoteIndex === 0) {
+                  newNotes = [{
+                    content: ''
+                  }, ...notes];
+                  setOpenNoteIndex(1);
+                }
                 setNotes(newNotes);
               }}
             />
