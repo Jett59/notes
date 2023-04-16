@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "https://jett59.github.io/notes/static/js/main.d3fe900c.js",
+    "main.js": "https://jett59.github.io/notes/static/js/main.fbe19531.js",
     "index.html": "https://jett59.github.io/notes/index.html",
-    "main.d3fe900c.js.map": "https://jett59.github.io/notes/static/js/main.d3fe900c.js.map"
+    "main.fbe19531.js.map": "https://jett59.github.io/notes/static/js/main.fbe19531.js.map"
   },
   "entrypoints": [
-    "static/js/main.d3fe900c.js"
+    "static/js/main.fbe19531.js"
   ]
 }
