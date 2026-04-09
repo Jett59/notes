@@ -1,9 +1,8 @@
-import { Button, CssBaseline, Grid, ThemeProvider, createTheme, useMediaQuery } from '@mui/material';
+import { Box, CssBaseline, Grid, ThemeProvider, createTheme, useMediaQuery } from '@mui/material';
 import React, { useEffect, useMemo, useState } from 'react';
 import NoteSelector from './NoteSelector';
 import { Note } from './note';
 import NoteViewer from './NoteViewer';
-import { read } from 'fs';
 
 export default function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -52,8 +51,13 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Grid container padding={2} spacing={2}>
-        <Grid item md={4}>
+      <Box sx={{ height: '100vh', overflow: 'hidden', p: 2 }}>
+        <Grid
+          container
+          spacing={2}
+          sx={{ height: '100%' }}
+        >
+        <Grid item xs={12} md={4} sx={{ height: { md: '100%' }, minHeight: 0 }}>
           <NoteSelector
             notes={notes}
             openNote={(index) => {
@@ -75,7 +79,7 @@ export default function App() {
             }}
           />
         </Grid>
-        <Grid item md={8}>
+        <Grid item xs={12} md={8} sx={{ height: { md: '100%' }, minHeight: 0 }}>
           {notes.length > 0 &&
             <NoteViewer
               noteContent={notes[openNoteIndex].content}
@@ -94,7 +98,8 @@ export default function App() {
             />
           }
         </Grid>
-      </Grid>
+        </Grid>
+      </Box>
     </ThemeProvider>
   );
 }

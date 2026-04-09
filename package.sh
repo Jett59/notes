@@ -1,3 +1,4 @@
 #!/bin/sh
 
-PUBLIC_URL=. npm run buildnpm run make
+PUBLIC_URL=. npm run build
+npm run make

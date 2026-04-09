@@ -6,6 +6,17 @@ export default function NoteViewer({ noteContent, setNoteContent, shouldRequestF
         fullWidth
         multiline
         autoFocus
+        sx={{
+            height: '100%',
+            '& .MuiInputBase-root': {
+                alignItems: 'stretch',
+                height: '100%',
+            },
+            '& .MuiInputBase-inputMultiline': {
+                height: '100% !important',
+                overflowY: 'auto !important',
+            },
+        }}
         inputRef={input => {
             if (input && shouldRequestFocus) {
                 input.focus();
